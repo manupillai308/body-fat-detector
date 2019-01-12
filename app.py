@@ -7,7 +7,7 @@ face_csc = cv2.CascadeClassifier('haarcascade_fullbody.xml')
 def get_bf(face_csc, im_path, weight, h1):
 	bf = 0
 	img = cv2.imread(im_path)
-	   
+	img = cv2.resize(img, (640,480))
 	gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 	
 	faces = face_csc.detectMultiScale(gray, 1.1, 4)
